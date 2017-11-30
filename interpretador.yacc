@@ -1,3 +1,9 @@
+// Compiladores 2017.1
+// Alunos: Jorge Veloso, Vanessa Lins e Anderson Melo
+//
+//
+// Última alteração: inclusão dos operadores de multiplicação e divisão (com precedência)
+
 %{
 #include <stdio.h>
 #include "tabela.h"
@@ -8,9 +14,11 @@ void yyerror(char *);
 
 pilha_contexto *pilha;
 
-%}
 
+%}
 %token TYPE INT FLOAT PRINT NUMBER ID
+// A precedência dos operadores é definida aqui. Sua ordem é avaliada de baixo para cima, por isso o + e - vem primeiro, já que,
+// matematicamente, * e / são prioridades.
 %left '+' '-'
 %left '*' '/'
 %%
