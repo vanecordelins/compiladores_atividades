@@ -1,3 +1,9 @@
+// Compiladores 2017.1
+// Alunos: Jorge Veloso, Vanessa Lins e Anderson Melo
+//
+//
+// Última alteração: inclusão dos operadores de multiplicação e divisão (com precedência)
+
 %{
 #include <stdlib.h>
 void yyerror(char *);
@@ -32,7 +38,8 @@ PRINT		{	return PRINT;
 			return ID;
 		}	
 
-[-+*//=(){};]	{	return *yytext; }
+[-+*//=(){};]	{	return *yytext; } /* Aqui foram adicionados os operadores matemáticos seguindo a ordem de 
+					     precedência que deve ser lida pra direita pra esquerda*/
 
 
 
